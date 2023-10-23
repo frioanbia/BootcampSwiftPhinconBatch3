@@ -7,7 +7,8 @@
         <page name='GuardLet'/>
         <page name='Basic Operator'/>
         <page name='SwitchCase'/>
-        <page name='Tuple'/>
-        <page name='Untitled Page'/>
+        <page name='Tuples'/>
+        <page name='Constant'/>
+        <page name='FoorLoop'/>
     </pages>
 </playground>

@@ -5,11 +5,11 @@ import UIKit
 // CaseIterable yaitu perulangan didalam enum
 enum Hari: String, CaseIterable {
     
-    case senin, selasa, rabu, kamis, jumat, sabtu, minggu
+    case Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu
     
     func checkDays() -> String {
         switch self {
-        case .senin:
+        case .Senin:
             return "kerja"
         default:
             return "libur"
@@ -17,5 +17,7 @@ enum Hari: String, CaseIterable {
     }
 }
 
+var namaHari: Hari = Hari.Senin
+print(namaHari.checkDays())
 print(Hari.allCases.count)
 //: [Next](@next)
