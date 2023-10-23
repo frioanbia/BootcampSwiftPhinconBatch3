@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Variable'/>
+        <page name='Optional'/>
+        <page name='Condition'/>
+        <page name='GuardLet'/>
+        <page name='Basic Operator'/>
+        <page name='SwitchCase'/>
+        <page name='Tuple'/>
+        <page name='Untitled Page'/>
+    </pages>
+</playground>
