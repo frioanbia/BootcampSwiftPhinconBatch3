@@ -77,4 +77,5 @@ let check: Days = Days.Jumat
 let person = workDays(name: "ujang", days: Days.Jumat)
 print("saya \(person.name) dan hari \(person.days) adalah \(check.checkDays())")
 
+
 //: [Next](@next)
