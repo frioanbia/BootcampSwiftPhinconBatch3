@@ -1,4 +1,4 @@
-# BootcampSwiftPhinconBatch3
+# Bootcamp Swift Phincon Batch3
 - Materi Dasar
   * Variable
   * Constant
