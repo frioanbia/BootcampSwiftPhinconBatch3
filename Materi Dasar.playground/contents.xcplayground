@@ -10,5 +10,9 @@
         <page name='Tuples'/>
         <page name='Constant'/>
         <page name='FoorLoop'/>
+        <page name='Function'/>
+        <page name='Class'/>
+        <page name='Closure'/>
+        <page name='Struct'/>
     </pages>
 </playground>
