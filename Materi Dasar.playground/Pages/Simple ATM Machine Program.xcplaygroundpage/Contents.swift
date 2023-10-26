@@ -2,21 +2,180 @@
 
 import Foundation
 
-class ATM {
+class ATMMachine {
     
-    func withdraw() {
-        
+    static func checkBalance() {
+        print("\tYour current balance is \(BalanceInquiry.getBalance())")
+    }
+    
+    func withdrawMoney() {
+        if BalanceInquiry.balance == 0 {
+            print("\tYour current balance is zero.")
+            print("\tYou cannot withdraw!")
+            print("\tYou need to deposit money first.")
+        } else if BalanceInquiry.balance <= 500 {
+            print("\tYou do not have sufficient money to withdraw")
+            print("\tChecked your balance to see your money in the bank.")
+        } else if Withdraw.withdraw > BalanceInquiry.balance {
+            print("\tThe amount you withdraw is greater than to your balance")
+            print("\tPlease check the amount you entered.")
+        } else {
+            BalanceInquiry.balance = BalanceInquiry.balance - Withdraw.withdraw
+            print("\n\tYou withdraw the amount of Php \(Withdraw.withdraw)")
+        }
     }
     
     func deposit() {
-        
+        print("\tYou deposited the amount of \(Deposit.getDeposit())")
     }
     
-    func balanceInquiry() {
+    func main() {
+        var select = 0
+        let choice = 0
         
+        print("Welcome to this simple ATM Machine")
+        
+        repeat {
+            try {
+                repeat {
+                    print("\tPlease select ATM Transactions")
+                    print("\tPress [1] Deposit")
+                    print("\tPress [2] Withdraw")
+                    print("\tPress [3] Balance Inquiry")
+                    print("\tPress [4] Exit")
+                    print("\n\tWhat would you like to do? ")
+                    
+                    select = readLine().self
+                    
+                    if select > 4 {
+                        print("\n\tPlease select correct transaction.")
+                    } else {
+                        switch select {
+                        case 1:
+                            print("\n\tEnter the amount of money to deposit: ")
+                            Deposit.deposit = read.nextDouble()
+                            BalanceInquiry.balance = Deposit.deposit + BalanceInquiry.balance;
+                            depositMoney()
+                            
+                        case 2:
+                            print("\n\tTo withdraw, make sure that you have sufficient balance in your account.");
+                            print()
+                            print("\tEnter amount of money to withdraw: ")
+                            Withdraw.withdraw = read.nextDouble()
+                            withdrawMoney();
+                            
+                        case 3:
+                            checkBalance()
+                            
+                        default:
+                            print("\n\tTransaction exited.")
+                        }
+                    }
+                } while select > 4
+                repeat {
+                    try {
+                        print("\n\tWould you like to try another transaction?")
+                        print("\n\tPress [1] Yes \n\tPress [2] No")
+                        print("\tEnter choice: ")
+                        choice = read.nextInt()
+                        
+                        if choice > 2 {
+                            print("\n\tPlease select correct choice.");
+                        }
+                    } catch error {
+                        print("\tError Input! Please enter a number only.")
+                        read = Scanner(System.in);
+                        print("\tEnter yout choice:");
+                        choice = read.nextInt();
+                    }
+                } while choice > 2
+            } catch error {
+                print("\tError Input! Please enter a number only.")
+                read = Scanner(System.in);
+                print("\tEnter yout choice:");
+                select = read.nextInt();
+            }
+        } while choice <= 1
+                   print("\n\tThank you for using this simple ATM Machine.")
     }
-    
 }
+
+class Deposit: ATMMachine {
+    static var deposit: Double = 0
+    
+    func setDeposit(_ d: Double) {
+        Deposit.deposit = d
+    }
+    
+    static func getDeposit() -> Double {
+        return deposit
+    }
+}
+
+class Withdraw: ATMMachine {
+    static var withdraw: Double = 0
+    
+    func setWithdraw(_ w: Double) {
+        Withdraw.withdraw = w
+    }
+    
+    static func getWithdraw() -> Double {
+        return withdraw
+    }
+}
+
+class BalanceInquiry: ATMMachine {
+    static var balance: Double = 0
+    
+    func setBalance(_ b: Double) {
+        BalanceInquiry.balance = b
+    }
+    
+    static func getBalance() -> Double {
+        return balance
+    }
+}
+
+
+
+//class ATMachine {
+//
+//    var balance: Double = 0
+//
+//    func checkBalance() {
+//        print("Your current balance is \(balance)")
+//    }
+//
+//    func withdraw() {
+//
+//    }
+//
+//    func balanceInquiry(amount: Double) throws {
+//        if balance == 0 {
+//            print("\tYour current balance is zero.");
+//            print("\tYou cannot withdraw!");
+//            print("\tYou need to deposit money first.");
+//        } else if balance <= 500 {
+//            print("\tYou do not have sufficient money to withdraw");
+//            print("\tChecked your balance to see your money in the bank.");
+//        } else if amount > balance {
+//            print("\tThe amount you withdraw is greater than to your balance");
+//            print("\tPlease check the amount you entered.");
+//        } else {
+//            balance -= amount
+//            print("\n\tYou withdraw the amount of Php \(amount)");
+//        }
+//    }
+//
+//    func depositMoney() {
+//        var deposit = balance
+//        print("\tYou deposited the amount of \(deposit)");
+//    }
+//
+//}
+
+
+
 
 //func inputString() -> String {
 //
